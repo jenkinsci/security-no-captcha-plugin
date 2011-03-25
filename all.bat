@@ -1,6 +1,13 @@
 call cls
-call mvn6 clean install -Dmaven.test.skip=true
-call rmdir /S /Q "C:\Documents and Settings\jacob.robertson\.hudson\plugins\security-no-captcha"
-call copy target\security-no-captcha.hpi "C:\Documents and Settings\jacob.robertson\.hudson\plugins"
-call java -jar C:\softwaredistribution\workspace\hudson\hudson\main\war/target/hudson.war
-rem call java -jar C:\softwaredistribution\hudson\hudson-1.357.war
+
+call set HUDSON_PORT=80
+call set HUDSON_HOME=C:\softwaredistribution\hudson\hudson-home-plugins
+call set HUDSON_WAR=%HUDSON_HOME%\hudson.war
+call set PLUGIN=security-no-captcha
+
+call mvn6 clean install -Dmaven.test.skip=true -gs C:\softwaredistribution\apache-maven-2.2.1\conf\jenkins-settings.xml -Pjenkins-repos
+
+call rmdir /S /Q "%HUDSON_HOME%\plugins\%PLUGIN%"
+call copy target\%PLUGIN%.hpi "%HUDSON_HOME%\plugins"
+
+call C:\softwaredistribution\Sun\jdk1.5.0_22\bin\java.exe -jar %HUDSON_WAR% --httpPort=%HUDSON_PORT%

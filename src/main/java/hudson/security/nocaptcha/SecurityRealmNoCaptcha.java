@@ -170,7 +170,7 @@ public class SecurityRealmNoCaptcha extends HudsonPrivateSecurityRealm {
     @Extension
     public static final class DescriptorImpl extends Descriptor<SecurityRealm> {
         public String getDisplayName() {
-            return "Hudson's own user database (without a CAPTCHA)";
+        	return hudson.security.Messages.HudsonPrivateSecurityRealm_DisplayName() + " (without a CAPTCHA)"; 
         }
     }
 }
