@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.jvnet.hudson.plugins</groupId>
@@ -14,6 +15,12 @@
 	<url>http://wiki.hudson-ci.org/display/HUDSON/Security+No+CAPTCHA</url>
 
 	<description>Simply extends the default Hudson security realm to not use a CAPTCHA.</description>
+
+	<scm>
+		<connection>scm:svn:https://svn.jenkins-ci.org/trunk/hudson/plugins/security-no-captcha</connection>
+		<developerConnection>scm:svn:https://svn.jenkins-ci.org/trunk/hudson/plugins/security-no-captcha</developerConnection>
+		<url>https://hudson.dev.java.net/source/browse/hudson/trunk/hudson/plugins/security-no-captcha</url>
+	</scm>
 
 	<developers>
 		<developer>
